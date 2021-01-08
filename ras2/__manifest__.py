@@ -5,7 +5,7 @@
     'name': 'RFID Attendance System RAS2',
     'version': '12.0.1.0.13',
     'category': 'Human Resources',
-    'website': 'https://github.com/thingsintouch/things_attendance/tree/12.0/ras2',
+    'website': 'https://github.com/thingsintouch/things_attendance/tree/12.0',
     'author': 'thingsintouch.com',
     'license': 'AGPL-3',
     'application': False,
