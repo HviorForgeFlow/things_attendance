@@ -14,5 +14,8 @@
         'hr_attendance_rfid',
     ],
     'data': [
+        'views/hr_employee_view.xml',
+        'wizard/add_singleton.xml',
+        'views/res_config_settings_views.xml',
     ],
 }

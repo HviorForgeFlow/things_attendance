@@ -8,21 +8,19 @@ import json
 from odoo import api, fields, models, _
 _logger = logging.getLogger(__name__)
 
+HEADER = '\033[95m'
+OKBLUE = '\033[94m'
+OKCYAN = '\033[96m'
+OKGREEN = '\033[92m'
+WARNING = '\033[93m'
+FAIL = '\033[91m'
+ENDC = '\033[0m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
+
 class HrEmployee(models.Model):
 
     _inherit = "hr.employee"
-
-    # def _get_default_employee(self):
-    #     return self.env['hr.employee'].search([('user_id', '=', self.env.uid)], limit=1)
-
-    # print("*"*120)
-    # print("_"*120)
-    # print("*"*120)
-    # print(_get_default_employee(self))
-    # print("*"*120)
-    # print("_"*120)
-    # print("*"*120)
-
 
     @api.multi
     def register_attendance_with_external_timestamp(self, timestamp = None):
@@ -137,18 +135,6 @@ class HrEmployee(models.Model):
 
     @api.model
     def get_attendance_information_of_all_employees(self, number_of_days=60):
-        HEADER = '\033[95m'
-        OKBLUE = '\033[94m'
-        OKCYAN = '\033[96m'
-        OKGREEN = '\033[92m'
-        WARNING = '\033[93m'
-        FAIL = '\033[91m'
-        ENDC = '\033[0m'
-        BOLD = '\033[1m'
-        UNDERLINE = '\033[4m'
-        # print(OKBLUE+"self.context ", self.env.context, ENDC) 
-        # print(BOLD+HEADER+"all the employees: "+ENDC+"\n\n"+OKCYAN,
-        #     self.env['hr.employee'].search([]), ENDC)
         """Returns a dictionary/json file with this indices:
                 employees:      all data of employees indexed with employee.id
                 rfid_card_code: contains employee.id
