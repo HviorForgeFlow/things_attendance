@@ -63,4 +63,3 @@ Maintainers
 ~~~~~~~~~~~
 
 This module is maintained by thingsintouch.
-
